@@ -9,7 +9,6 @@ Source Database       : shiro_db
 Target Server Type    : MYSQL
 Target Server Version : 50709
 File Encoding         : 65001
-
 */
 
 create database if not exists shiro_db;
