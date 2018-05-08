@@ -111,8 +111,4 @@ public class MyBatisConfig {
         System.out.println(">>>>>>>>>>>配置[typeAliasesPackage,mapperLocations]END>>>>>>>>>>>>>>");
         return sessionFactory.getObject();
     }
-
-    public static void main(String[] args) throws Exception {
-        setTypeAliasesPackage("com.xialeme.**.entity");
-    }
 }
