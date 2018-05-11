@@ -6,4 +6,5 @@ import java.util.HashMap;
 
 public interface UserInfoService {
     public UserInfo findAdminByUsernamePassword(String username, String password);
+    public UserInfo findUserById(Long id);
 }

@@ -24,7 +24,7 @@ public class JWTUtil {
             return null;
         }
     }
-    public static HashMap verify(String token, String username, String secret) {
+    public static HashMap<String, String> verify(String token, String secret) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             JWTVerifier verifier = JWT.require(algorithm)
@@ -33,8 +33,11 @@ public class JWTUtil {
             HashMap<String, String> hashMap = new HashMap<>();
             hashMap.put("tokenId", jwt.getId());
             hashMap.put("uId", jwt.getClaim("uId").asString());
+            System.out.println("tokenId: " + jwt.getId());
+            System.out.println("uId: " + jwt.getClaim("uId").asString());
             return hashMap;
         } catch (Exception exception) {
+            exception.printStackTrace();
             return null;
         }
     }

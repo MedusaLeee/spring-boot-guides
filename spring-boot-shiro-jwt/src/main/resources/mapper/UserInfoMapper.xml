@@ -4,4 +4,13 @@
     <select id="findUserByUsernameAndPassword" resultType="UserInfo" parameterType="java.util.HashMap">
         SELECT * FROM user_info WHERE username = #{username} and password=#{password}
     </select>
+    <select id="findUserById" resultType="UserInfo" parameterType="java.lang.Long">
+        SELECT * FROM user_info WHERE uid = #{uid}
+    </select>
+    <select id="findRoleByUId" resultType="SysRole" parameterType="java.lang.Long">
+        SELECT r.* FROM sys_user_role ur,sys_role r WHERE ur.uid=#{uid} AND ur.role_id=r.id
+    </select>
+    <select id="findPermissionByRoleId" resultType="SysPermission" parameterType="java.lang.Long">
+        SELECT p.* FROM sys_role_permission rp,sys_permission p WHERE rp.role_id=#{roleId} AND rp.permission_id=p.id
+    </select>
 </mapper>
